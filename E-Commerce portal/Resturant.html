@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TasteCart - Restaurant E-Commerce</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">🍴 TasteCart</div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#products">Menu</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#login">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HOME SECTION -->
+  <section id="home" class="hero">
+    <h1>Welcome to TasteCart</h1>
+    <p>Delicious food delivered to your doorstep!</p>
+    <button>Order Now</button>
+  </section>
+
+  <!-- PRODUCTS SECTION -->
+  <section id="products" class="products">
+    <h2>Our Popular Dishes</h2>
+    <div class="product-grid">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092" alt="Burger">
+        <h3>Cheese Burger</h3>
+        <p>₹199</p>
+        <button>Add to Cart</button>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836" alt="Pizza">
+        <h3>Italian Pizza</h3>
+        <p>₹299</p>
+        <button>Add to Cart</button>
+      </div>
+      <div class="card">
+        <img src="C:\Users\Hp\Desktop\Assignment\WDE Assignment\wsp.jpg" alt="Pasta">
+        <h3>White Sauce Pasta</h3>
+        <p>₹249</p>
+        <button>Add to Cart</button>
+      </div>
+      <div class="card">
+        <img src="C:\Users\Hp\Desktop\Assignment\WDE Assignment\cc.jpg" alt="Dessert">
+        <h3>Chocolate Cake</h3>
+        <p>₹149</p>
+        <button>Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ORDERS AND REVIEWS -->
+  <section id="orders" class="info-section">
+    <h2 style="text-align: center;">Customer Features</h2>
+    <ul style="text-align: center;">
+      <li>🛒 My Orders</li>
+      <li>💖 Wishlist</li>
+      <li>💬 Comments & Reviews</li>
+      <li>📞 Customer Care</li>
+      <li>📊 Reporting & Feedback</li>
+    </ul>
+  </section>
+
+  <!-- LOGIN AND REGISTRATION -->
+  <section id="login" class="auth">
+    <div class="form-container">
+      <h2>User Login</h2>
+      <form onsubmit="return validateLogin()">
+        <input type="text" id="loginUser" placeholder="Username" required>
+        <input type="password" id="loginPass" placeholder="Password" required minlength="6">
+        <button type="submit">Login</button>
+      </form>
+    </div>
+
+    <div class="form-container">
+      <h2>User Registration</h2>
+      <form onsubmit="return validateRegister()">
+        <input type="text" id="regUser" placeholder="Username" required>
+        <input type="email" id="regEmail" placeholder="Email" required>
+        <input type="password" id="regPass" placeholder="Password" required minlength="6">
+        <input type="password" id="regConfirm" placeholder="Confirm Password" required>
+        <button type="submit">Register</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" class="about">
+    <h2>About TasteCart</h2>
+    <p>
+      TasteCart is a modern restaurant e-commerce platform bringing you
+      freshly prepared meals, desserts, and beverages with a single click.
+      Our mission is to make your dining experience delightful — wherever you are.
+    </p>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <p>Email: support@tastecart.com</p>
+    <p>Phone: +91 98765 43210</p>
+    <p>Address: 123 Food Street, Chennai, India</p>
+  </section>
+
+  <footer>
+    <p>© 2025 TasteCart. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function validateLogin() {
+      const user = document.getElementById('loginUser').value;
+      const pass = document.getElementById('loginPass').value;
+      if (user === "" || pass === "") {
+        alert("All login fields are required!");
+        return false;
+      }
+      alert("Login successful!");
+      return true;
+    }
+
+    function validateRegister() {
+      const pass = document.getElementById('regPass').value;
+      const confirm = document.getElementById('regConfirm').value;
+      if (pass !== confirm) {
+        alert("Passwords do not match!");
+        return false;
+      }
+      alert("Registration successful!");
+      return true;
+    }
+  </script>
+</body>
+</html>
